@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container"><h1>Hi, User</h1></div>
+<div class="bd-example">
+  <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+      <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="../static/payment06.jpg" class="d-block w-100" alt="..." height="480">
+        <div class="carousel-caption d-none d-md-block">
+          <h5><b>One stop payment for all your bills!</b></h5>
+          <p>Pay all your bills from one single application.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="../static/payment07.jpg" class="d-block w-100" alt="..." height="480">
+        <div class="carousel-caption d-none d-md-block">
+          <h5><b>Manage your wealth</b></h5>
+          <p>We want you to maximize your wealth expenditure and help you keep in track</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="../static/payment05.jpg" class="d-block w-100" alt="..." height="480">
+        <div class="carousel-caption d-none d-md-block">
+          <h5><b>Improved fraud detection and risk minimization</b></h5>
+          <p>eWallet lets you make payments from athirb party bank account. So that your credit </p>
+        </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+{% endblock %}

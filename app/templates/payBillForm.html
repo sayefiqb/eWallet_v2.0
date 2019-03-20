@@ -1,0 +1,28 @@
+{% extends "layout.html"%}
+{%block content%}
+<form action="/payBillForm" method="post">
+	{{form.hidden_tag()}}
+	<br>
+	<br>
+	<select name = "card" class="form-control form-control-lg">
+	{% for card in cards%}
+  		<option value="{{ card.number}},{{card.cvv}},{{card.expMonth}},{{card.expYear}}">Card ending with {{card.number}}</option>
+	{% endfor %}
+	</select>
+	<p>
+		{{form.amount.label}} <br>
+		{{form.amount(size=32)}} <br>
+		{% for error in form.amount.errors %}
+		<span style="color: red">error</span>
+		{%endfor%}
+	</p>
+	<p>
+		{{form.description.label}} <br>
+		{{form.description(size=32)}} <br>
+		{% for error in form.description.errors %}
+		<span style="color: red">error</span>
+		{%endfor%}
+	</p>
+	<p>{{ form.submit()}}</p>
+</form>
+{% endblock %}

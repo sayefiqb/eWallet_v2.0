@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block content%}
+<br>
+<br>
+<div class="list-group">
+  <a href="#" class="list-group-item list-group-item-action active">
+    <div class="d-flex w-100 justify-content-between">
+      <h4 class="mb-1">You Cards</h4>
+    </div>
+    <p class="mb-1">View all your debit and credit cards here.</p>
+
+  </a>
+  {% for card in cards %}
+  <a href="#" class="list-group-item list-group-item-action">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">{{card.number}}</h5>
+      <small class="text-muted">Added few minutes ago</small>
+    </div>
+    <p class="mb-1">***</p>
+    <small class="text-muted">Expires: {{card.expMonth}}/{{card.expYear}}</small>
+  </a>
+  {% endfor %}
+</div>
+<br>
+<br>
+<br>
+{% endblock %}

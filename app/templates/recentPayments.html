@@ -1,0 +1,13 @@
+{% extends "layout.html"%}
+{% block content%}
+<h1>Recent Payments</h1>
+    {%for payment in payments %}
+        <ul>
+          <li>
+            <a link="/payments/{{payment.id}}">
+              {{payment.company}} {{payment.date}}
+              {{payment.amount}}
+            </a>
+          </li>
+        </ul>
+{% endblock %}

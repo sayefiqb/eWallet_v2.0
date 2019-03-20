@@ -1,0 +1,62 @@
+{% extends "layout.html"%}
+{% block content%}
+<form action="" method="post">
+	{{form.hidden_tag()}}
+	<p>
+		{{form.number.label}} <br>
+		{{form.number(size=16)}} <br>
+		{% for error in form.number.errors %}
+		<span style="color: red">error</span>
+		{%endfor%}
+	</p>
+	<p>
+		{{form.cvv.label}} <br>
+		{{form.cvv(size=3)}} <br>
+		{% for error in form.cvv.errors %}
+		<span style="color: red">error</span>
+		{%endfor%}
+	</p>
+
+	<p>
+		{{form.expMonth.label}} <br>
+		{{form.expMonth(size=2)}} <br>
+		{% for error in form.expMonth.errors %}
+		<span style="color: red">error</span>
+		{%endfor%}
+	</p>
+
+	<p>
+		{{form.expYear.label}} <br>
+		{{form.expYear(size=2)}} <br>
+		{% for error in form.expYear.errors %}
+		<span style="color: red">error</span>
+		{%endfor%}
+	</p>
+
+	<p>
+		{{form.addressCity.label}} <br>
+		{{form.addressCity(size=16)}} <br>
+		{% for error in form.addressCity.errors %}
+		<span style="color: red">error</span>
+		{%endfor%}
+	</p>
+
+	<p>
+		{{form.addressState.label}} <br>
+		{{form.addressState(size=2)}} <br>
+		{% for error in form.addressState.errors %}
+		<span style="color: red">error</span>
+		{%endfor%}
+	</p>
+
+	<p>
+		{{form.addressZip.label}} <br>
+		{{form.addressZip(size=5)}} <br>
+		{% for error in form.addressZip.errors %}
+		<span style="color: red">error</span>
+		{%endfor%}
+	</p>
+
+	<p>{{ form.submit()}}</p>
+</form>
+{% endblock %}

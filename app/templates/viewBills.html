@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% block content%}
+<br>
+<br>
+<div class="list-group">
+  <a href="#" class="list-group-item list-group-item-action active">
+    <div class="d-flex w-100 justify-content-between">
+      <h4 class="mb-1">Your Bills</h4>
+    </div>
+    <p class="mb-1">View all your bills here.</p>
+
+  </a>
+{% for bill in bills %}
+<a href="#" class="list-group-item list-group-item-action">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">Billing Information</h5>
+      <small class="text-muted">{{bill.usage}}
+      {% if bill.paid %}
+      Paid
+      </small>
+      {% endif %}
+    </div>
+    <p class="mb-1">{{bill.duePayment}}</p>
+    <small class="text-muted">Account: {{bill.accountNumber}} Contact: {{bill.accountHolder}}</small>
+    <small class="text-muted">Address: {{bill.billingAddress}}</small>
+  </a>
+  {% endfor %}
+</div>
+<br>
+<br>
+<br>
+{% endblock %}
