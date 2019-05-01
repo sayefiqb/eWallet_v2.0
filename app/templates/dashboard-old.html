@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+<head>  
+<script type="text/javascript" src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<script type="text/javascript">
+
+window.onload = function () {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+  animationEnabled: true,
+  theme: "light2",
+  title:{
+    text: "Simple Line Chart"
+  },
+  axisY:{
+    includeZero: false
+  },
+  data: [{        
+    type: "line",       
+    dataPoints: dataPoints
+  }]
+});
+
+// var getData = $.get('/getdashboard')
+
+// getData.done(function(result) {
+//     $.each(result, function(index, value){
+//         dataPoints.push({y: paeseInt(value)});
+//     });
+//     chart.render();
+
+// });
+$.getJSON("/getdashboard", function(result) {  
+  $.each(data, function(index, value){
+    dataPoints.push({y: parseInt(value)});
+  });
+
+}
+</script>
+</head>
+<body>
+<div id="chartContainer" style="height: 300px; width: 100%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</body>
+</html>

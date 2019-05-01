@@ -1,0 +1,74 @@
+{% extends "layout.html"%}
+{% block content%}
+<html>
+<h1 style="text-align: center;">Register</h1>
+<head>
+     <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <title>Register</title>
+</head>
+<body>
+  <div class="card" style="width: 40rem; margin: auto; border: 2px solid grey; padding: 15px">
+<form action="" method="post">
+	{{form.hidden_tag()}}
+
+	<p>
+		{{form.fname.label}} <br>
+		{{form.fname(size=64)}} <br>
+		{% for error in form.fname.errors %}
+		<span style="color: red">error</span>
+		{%endfor%}
+	</p>
+
+	<p>
+		{{form.lname.label}} <br>
+		{{form.lname(size=64)}} <br>
+		{% for error in form.lname.errors %}
+		<span style="color: red">error</span>
+		{%endfor%}
+	</p>
+
+	<p>
+		{{form.phone.label}} <br>
+		{{form.phone(size=64)}} <br>
+		{% for error in form.phone.errors %}
+		<span style="color: red">error</span>
+		{%endfor%}
+	</p>
+
+	<p>
+		{{form.email.label}} <br>
+		{{form.email(size=64)}} <br>
+		{% for error in form.email.errors %}
+		<span style="color: red">error</span>
+		{%endfor%}
+	</p>
+	<p>
+		{{form.password.label}} <br>
+		{{form.password(size=32)}} <br>
+		{% for error in form.password.errors %}
+		<span style="color: red">error</span>
+		{%endfor%}
+	</p>
+
+	<p>
+		{{form.retypePassword.label}} <br>
+		{{form.retypePassword(size=32)}} <br>
+		{% for error in form.retypePassword.errors %}
+		<span style="color: red">error</span>
+		{%endfor%}
+	</p>
+	<p>{{ form.submit()}}</p>
+</form>
+</div>
+ <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </body>
+    </html>
+{% endblock %}
+

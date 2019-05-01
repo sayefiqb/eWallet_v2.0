@@ -1,0 +1,6 @@
+Dear {{ fname }},
+
+Thank you for registering with EZwallet! We hope you enjoy our services!
+
+Best,
+The EZwallet Team

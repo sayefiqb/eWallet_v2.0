@@ -1,0 +1,107 @@
+{% extends "layout.html"%}
+{%block head%}
+<script type="text/javascript" src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<script type="text/javascript">
+window.onload = function () {
+var dataPoints = [];
+var linechart = new CanvasJS.Chart("linechartContainer",{
+	title:{
+		text:"Recent Payments"
+	},
+	axisY: {
+		title: "Amount Paid",
+		incudeZero: false
+	},
+
+	axisX: {
+		minimum: 0,
+		interval: 1,
+		title: "Payment No."
+	},
+
+	data: [{
+		type: "line",
+		dataPoints : dataPoints,
+	}]
+});
+$.getJSON("/getDashboard", function(result) {  
+	$.each(result, function(index, value){
+		dataPoints.push({y: parseInt(value)});
+	});	
+	linechart.render();
+});
+
+
+var piechart = new CanvasJS.Chart("piechartContainer", {
+	animationEnabled: true,
+	title:{
+		text: "Your Bills",
+		horizontalAlign: "left"
+	},
+	data: [{
+		type: "doughnut",
+		startAngle: 60,
+		//innerRadius: 60,
+		indexLabelFontSize: 17,
+		indexLabel: "{label} - #percent%",
+		toolTipContent: "<b>{label}:</b> {y} (#percent%)",
+		dataPoints: [
+			{ y: 67, label: "ConED" },
+			{ y: 28, label: "National Grid" },
+			{ y: 10, label: "Macys" },
+			{ y: 7, label: "Discover"},
+			{ y: 15, label: "Home Mortgage"},
+			{ y: 6, label: "Spectrum"}
+		]
+	}]
+});
+piechart.render();
+
+}
+
+</script>
+{% endblock%}
+
+
+{% block content%}
+
+<div class="row">	
+<div class="col-lg-6">	
+<div id="linechartContainer" style="height: 300px; width: 100%;"></div>
+</div>
+<div class="col-lg-6">	
+<div id="piechartContainer" style="height: 300px; width: 100%;"></div>
+</div>
+</div>
+<br>
+<div class="row">
+<div class="col-lg-6">
+	<a href="#" class="list-group-item list-group-item-action active">
+	<div class="d-flex w-100 justify-content-between">
+        <h4 class="mb-1">Last Paid Bill</h4>
+      </div>
+
+	{% for payment in paymentlist[0:1] %}
+  	<a href="#" class="list-group-item list-group-item-action">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">{{payment.amount}}</h5>
+      <small class="text-muted">Paid on {{payment.timestamp}}</small>
+      <small class="text-muted">Paid to {{payment.company}}</small>
+    </div>
+    <p class="mb-1">***</p>
+    <small class="text-muted">Description: {{payment.description}}</small>
+  </a>
+  {% endfor %}
+</div>
+<div class="col-lg-6">
+<div class="card w-80">
+  <div class="card-body">
+    <h5 class="card-title">Pay Bill Now</h5>
+    <p class="card-text">Pay your bills on the go.</p>
+    <a href="/manageBill/selectBill" class="btn btn-primary">Pay</a>
+  </div>
+</div>
+</div>
+</div>
+{% endblock %}

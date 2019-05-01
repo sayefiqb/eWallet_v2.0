@@ -1,0 +1,16 @@
+{% extends "layout.html"%}
+{% block content%}
+
+<html>
+<h1>News</h1>
+
+{%for article in articles%}
+<a href="{{article['url']}}" class="list-group-item list-group-item-action">
+<h3>{{article['title']}}</h3>
+<img src={{article['urlToImage']}} class="d-block w-80" alt="..." height="400">
+</a>
+<br>
+{% endfor %}
+
+
+{% endblock %}

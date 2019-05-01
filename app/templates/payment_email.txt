@@ -1,0 +1,6 @@
+Dear {{ fname }},
+
+We have recieved your payment! Thank you for choosing us.
+
+Best,
+The EZwallet Team

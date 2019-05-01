@@ -1,0 +1,48 @@
+{% extends "layout.html"%}
+{% block content%}
+
+<html>
+<h1>Cryptocurrency Prices</h1>
+
+
+<div class="list-group">
+     <a href="#" class="list-group-item list-group-item-action active">
+     <div class="d-flex w-100 justify-content-between">
+       <h4 class="mb-1">Bitcoin (BTC) Price</h4>
+     </div>
+   <a href="#" class="list-group-item list-group-item-action">
+     <div class="d-flex w-100 justify-content-between">
+       <h5 class="mb-1">{{data_BTC["5. Exchange Rate"]}}</h5>
+     </div>
+
+     </a>
+     <br>
+
+     <div class="list-group">
+          <a href="#" class="list-group-item list-group-item-action active">
+          <div class="d-flex w-100 justify-content-between">
+            <h4 class="mb-1">Litecoin (LTC) Price</h4>
+          </div>
+        <a href="#" class="list-group-item list-group-item-action">
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">{{data_LTC["5. Exchange Rate"]}}</h5>
+          </div>
+
+          </a>
+          <br>
+
+          <div class="list-group">
+               <a href="#" class="list-group-item list-group-item-action active">
+               <div class="d-flex w-100 justify-content-between">
+                 <h4 class="mb-1">Ethereum (ETH) Price</h4>
+               </div>
+             <a href="#" class="list-group-item list-group-item-action">
+               <div class="d-flex w-100 justify-content-between">
+                 <h5 class="mb-1">{{data_ETH["5. Exchange Rate"]}}</h5>
+               </div>
+
+               </a>
+               <br>
+
+
+{% endblock %}

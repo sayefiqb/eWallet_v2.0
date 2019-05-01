@@ -1,0 +1,40 @@
+{% extends "layout.html"%}
+{% block content %}
+<br>
+<br>
+<div class="container" id="result">{{result}}
+ <div class="d-flex justify-content-center">
+  <div class="spinner-border" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+</div></div>
+
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>
+    	$(document).ready(function() {
+    setInterval("ajaxd()",3000); // call every 10 seconds
+	});
+
+function ajaxd() { 
+  //reload result into element with id "sysStatus"
+  $("#result").load("/notifications");
+
+ }
+
+
+
+// $(function() {
+//             setInterval(function() {
+//                 $.ajax('{{ url_for('notifications') }}').done(
+//                     function(data) {
+//                         $("#result").text(data.result);
+//                         }
+//                     }
+//                 );
+//             }, 10000);
+    </script>
+<!-- <h1><a href=# id=result></a></h1> -->
+{% endblock %}
+

@@ -1,0 +1,38 @@
+{% extends "layout.html"%}
+{% block content %}
+<br>
+<br>
+<div class="row">
+  <div class = "col-lg-4">
+<div class="card" style="width: 20rem;">
+  <img src="../static/selectBill.jpg" class="card-img-top" alt="..." style="height: 20rem">
+  <div class="card-body">
+    <h5 class="card-title">Select Bill</h5>
+    <p class="card-text">Select what you want to pay today</p>
+    <a href="/manageBill/selectBill" class="btn btn-primary">Pay Bill</a>
+  </div>
+</div>
+</div>
+ <div class = "col-lg-4">
+  <div class="card" style="width: 20rem;">
+  <img src="../static/scheduleBill.jpg" class="card-img-top" alt="..." style="height: 20rem">
+  <div class="card-body">
+    <h5 class="card-title">Schedule Payments</h5>
+    <p class="card-text">Schedule your bill payment on the go</p>
+    <a href="#" class="btn btn-primary">Schedule Payments</a>
+  </div>
+</div>
+</div>
+ <div class = "col-lg-4">
+  <div class="card" style="width: 20rem;">
+  <img src="../static/viewPayment.jpg" class="card-img-top" alt="..." style="height: 20rem">
+  <div class="card-body">
+    <h5 class="card-title">View Payments</h5>
+    <p class="card-text">View your last paid bills</p>
+    <a href="/manageBill/recentpayments" class="btn btn-primary">Past Payemnts</a>
+  </div>
+</div>
+</div>
+</div>
+<br>
+{% endblock %}

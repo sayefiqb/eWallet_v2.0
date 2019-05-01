@@ -1,0 +1,7 @@
+{% extends "layout.html"%}
+{% block content%}
+{% for rate in rates%}
+<h5>{{rate}}: {{rates[rate]}}</h5>
+<br>
+{% endfor %}
+{% endblock %}

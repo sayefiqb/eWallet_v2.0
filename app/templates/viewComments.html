@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block content%}
+<br>
+<br>
+<div class="list-group">
+  <a href="#" class="list-group-item list-group-item-action active">
+    <div class="d-flex w-100 justify-content-between">
+      <h4 class="mb-1">Comments</h4>
+    </div>
+    <p class="mb-1">View all comments here.</p>
+
+  </a>
+  {% for comment in comments %}
+  <a href="#" class="list-group-item list-group-item-action">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">{{comment.comment}}</h5>
+      <small class="text-muted">Posted On: {{comment.timestamp}}</small>
+    </div>
+
+  </a>
+  {% endfor %}
+</div>
+<br>
+<br>
+<br>
+{% endblock %}
